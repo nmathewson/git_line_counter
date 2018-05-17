@@ -1,0 +1,31 @@
+
+Here's a few scripts I wrote a while ago when I needed to estimate the
+amount of code written in core Tor by different contributors.
+
+Please understand how it works, so you can understand its limitations.
+
+It works by running "git log" to find all the commits for Tor over a
+given period.  For each commit, it asks "git log" two things:
+whose name is on the commit, and how many lines did it change?
+
+Finally it looks for paid versus volunteer contributors, since we
+sometimes need to figure this out for accounting purposes.
+
+LIMITATIONS:
+
+So as you can see from the above: this tool only counts lines of code
+changed -- not the difficulty or significance of those changes.  And it
+can't tell you when the line was merged -- only when it was written.
+Make sure you understand that, or you'll be pretty confused by the
+results.
+
+This tool also counts everybody as "paid" or "volunteer" -- it has no
+concept of people being paid for part of the time but not the rest.
+
+HOW TO USE IT:
+
+1. Edit the vollines.py script to contain the right year.
+
+2. Run vollines.py from inside the git repository you want to measure.
+
+

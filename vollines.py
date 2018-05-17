@@ -4,7 +4,7 @@ import os
 import re
 import subprocess
 
-YEAR = 2015
+YEAR = 2018
 
 def parse_log(year):
 
@@ -41,7 +41,7 @@ def parse_log(year):
 
     return lines_added
 
-la = parse_log(2015)
+la = parse_log(YEAR)
 
 for lines, user in sorted((l,u) for u, l in la.items()):
     print("% 10d  %s" % (lines, user))
